@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Create Ticket</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3 class=".bg-secondary">Ticket Tracker System</h3>
+    <hr>
+
+    <p class="h4 mb-4">Create Ticket</p>
+
+    <form class = 'card p-3 bg-light' action="#" th:action="@{/ticket/saveTicket}"
+          th:object="${ticket}" method="POST">
+
+        <input type="text" th:field="*{title}"
+               class="form-control mb-4 col-4" placeholder="Ticket title">
+
+        <input type="text" th:field="*{description}"
+               class="form-control mb-4 col-4" placeholder="Ticket Description">
+
+        <textarea id="editor" th:field="*{content}"
+                      class="form-control mb-4 col-4" placeholder="content"></textarea>
+
+        <button type="submit" class="btn btn-primary col-2">Save</button>
+
+    </form>
+
+    <hr>
+    <a th:href="@{/ticket/list}">Back to Ticket List</a>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
